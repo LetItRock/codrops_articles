@@ -1,0 +1,265 @@
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+    color: #909090;
+    background: #111;
+}
+
+a {
+    text-decoration: none;
+    color: #909090;
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    color: #fff;
+}
+
+/* slideshow */
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 1em 0;
+    pointer-events: none;
+}
+
+.js .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.js .slide--current {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.slide__title {
+    font-family: 'Arapey';
+    font-weight: normal;
+    position: relative;
+    z-index: 10;
+    font-size: 13vw;
+    margin: 0;
+    line-height: 0.8;
+    color: #8dbd2b;
+    pointer-events: none;
+}
+
+.slide .mirror {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.slideshow__nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    bottom: 0;
+    right: 0;
+    padding: 0 2em 1em;
+    overflow: hidden;
+}
+
+.slideshow__nav--inline {
+    display: block;
+    top: 30vh;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.slideshow__nav--inline .btn {
+    display: inline-block;
+    margin: 0 1em;
+    pointer-events: auto;
+}
+
+.slideshow__nav--nopad {
+    padding: 0;
+}
+
+.btn {
+    border: 0;
+    background: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    padding: 0.25em 0;
+    margin: 0.5em 0 0.75em;
+    color: inherit;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn--current {
+    border-color: currentColor;
+}
+
+.btn--nav:last-child {
+    margin-bottom: 0;
+}
+
+.btn--line {
+    width: 100%;
+    text-align: right;
+    padding: 0.15em 30px 0.15em 0;
+    transition: color 0.3s;
+}
+
+.btn--line::before {
+    content: '';
+    width: 10px;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: -1;
+    margin-top: -1px;
+    background: #ffb74d;
+    transition: transform 0.3s;
+}
+
+.btn--line.btn--current {
+    border-color: transparent;
+    color: #fff;
+}
+
+.btn--line.btn--current::before {
+    transform: scale3d(26, 20, 1);
+}
+
+.btn--play {
+    top: 70vh;
+    left: 50%;
+    color: #ffb74d;
+    font-size: 3em;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: color 0.3s;
+}
+
+.btn--play:hover {
+    color: #fff;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #A8A9C8 url(../img/bg.jpg);
+    background-size: cover;
+}
+
+.demo-3 {
+    background: #2357c1;
+    color: #fff;
+}
+
+.js body.demo-3::before {
+    background: #a4b7e4;
+    color: #fff;
+}
+
+.demo-3 a {
+    color: #fff;
+}
+
+.demo-3 a:hover,
+.demo-3 a:focus {
+    color: #fff;
+}
+
+.demo-3 .demo,
+.demo-3 .github {
+    color: #2d3f61;
+}
+
+.demo-3 .slide {
+    mix-blend-mode: color-burn;
+}
+
+.demo-3 .slideshow__nav {
+    left: 0;
+    right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.demo-3 .mirror {
+    opacity: 0.25;
+}
+
+.demo-3 .mirror__side {
+    padding: 4em 0;
+}
+
+.demo-3 .slide__title {
+    color: #2d3f61;
+    font-family: Raleway, sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 7em;
+    align-self: center;
+}
+
+.demo-3 .slideshow__nav .btn {
+    color: #ffeb3b;
+    cursor: pointer;
+}
+
+.demo-3 .slideshow__nav .btn:hover {
+    color: #fff;
+}
+
+.demo-3 .mirror__img {
+    max-height: 65vh;
+}
+
+@media screen and (max-width: 50em) {
+    .slideshow__nav {
+        width: 100%;
+        padding: 0;
+        bottom: auto;
+        top: 0;
+        display: block;
+    }
+    .demo-3 .slide__title {
+        font-size: 2em;
+    }
+}
