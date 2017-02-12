@@ -1,0 +1,255 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    color: #d0cfc5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* CONTENT */
+.content {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.content--full {
+    height: 100vh;
+    min-height: 600px;
+}
+
+.flexy {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexy--center {
+    justify-content: center;
+}
+
+.flexy--row {
+    flex-direction: row;
+}
+
+.content__heading {
+    flex: none;
+    width: 100%;
+    padding: 0 5vw;
+}
+
+.content__heading--center {
+    text-align: center;
+}
+
+.content__title {
+    font-size: 8vw;
+    line-height: 1.2;
+    padding: 0 5vw;
+}
+
+.content__title--half {
+    width: 50vw;
+    z-index: 2;
+}
+
+.content__title--enclosed {
+    padding: 0;
+    margin: 0;
+}
+
+.content__title--center {
+    margin: auto;
+}
+
+.content__title--right {
+    text-align: right;
+    padding: 0 0 0 2em;
+}
+
+.content__title--left {
+    margin-left: -18vw;
+}
+
+.content__title--medium {
+    font-size: 6vw;
+}
+
+.content__title--small {
+    font-size: 2vw;
+}
+
+.content__title__inner {
+    flex: none;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+}
+
+.content__title__inner--offset-1 {
+    top: -0.25em;
+    left: 13.6vw;
+}
+
+.content__title__inner--offset-2 {
+    top: -0.25em;
+    left: 1.75vw;
+}
+
+.content__title__inner--offset-3 {
+    top: -0.25em;
+    left: 10vw;
+}
+
+.content__image-wrap {
+    flex: none;
+    width: 25vw;
+}
+
+.content__image-wrap--half {
+    width: 50vw;
+}
+
+.content__image {
+    width: 100%;
+    display: block;
+}
+
+.block-revealer__element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.triggers {
+    border: 2px solid;
+    padding: 3em;
+    margin: 0 5vw;
+    width: 40vw;
+}
+
+/* Related demos */
+.content--related {
+    padding: 8em 5vw;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content--related h2 {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.25em;
+}
+
+.content--related .demos {
+    padding-bottom: 3em;
+}
+
+.media-item {
+    display: inline-block;
+    padding: 1em;
+    vertical-align: top;
+    transition: color 0.3s;
+}
+
+.media-item__img {
+    max-width: 100%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.media-item:hover .media-item__img,
+.media-item:focus .media-item__img {
+    opacity: 1;
+}
+
+.media-item__title {
+    font-size: 1em;
+    margin: 0;
+    padding: 0.5em;
+}
+
+/* Demo specific styles */
+
+/* Buttons */
+.btn {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: inherit;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn--trigger {
+    margin: 1em;
+    display: block;
+    white-space: nowrap;
+}
+
+.btn--default,
+.btn--trigger::before {
+    font-weight: bold;
+    border: 2px solid;
+    text-align: center;
+    text-indent: 0;
+    display: inline-block;
+    line-height: 1.7;
+}
+
+.btn--trigger::before {
+    content: 'Press';
+    width: 4em;
+    height: 2em;
+    margin: 0 0.75em;
+}
+
+.btn--trigger:active::before {
+    content: 'Ouch!';
+}
+
+.btn--default {
+    padding: 0 1em;
+    margin: 2vh 0 0;
+}
+
+.btn--tool {
+    display: block;
+    margin: 1em 0;
+    font-size: 1.3em;
+    color: #8a7c78;
+}
+
+.btn--menu {
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+    color: #939391;
+    pointer-events: visible;
+}
+
+.btn--close {
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+    font-size: 0.75em;
+    z-index: 100;
+}
